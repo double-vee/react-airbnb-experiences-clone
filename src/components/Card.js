@@ -1,12 +1,11 @@
 import star from "../assets/star.svg";
 
 export function Card({
-  img,
-  rating,
-  reviewCount,
-  location,
   title,
   price,
+  coverImg,
+  stats: { rating, reviewCount },
+  location,
   openSpots,
 }) {
   let badgeText = "";
@@ -20,7 +19,7 @@ export function Card({
   return (
     <div className="card">
       <div className="card__img-wrapper">
-        <img src={img} alt="" className="card__img" />
+        <img src={coverImg} alt="" className="card__img" />
         {badgeText && <p className="card__badge">{badgeText}</p>}
       </div>
       <div className="card__stats">
