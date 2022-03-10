@@ -42,8 +42,8 @@ body,
 
 .hero__grid img,
 .card__img {
+  display: block;
   width: 100%;
-  height: auto;
   object-fit: cover;
 }
 
@@ -63,15 +63,21 @@ body,
   line-height: 110%;
 }
 
+.cards-container {
+  display: flex;
+  gap: 18px;
+  padding: 0 36px 30px;
+}
+
 .card {
   display: flex;
   flex-direction: column;
+  flex: 0 0 auto;
+  max-width: 176px;
 }
 
 .card__img-wrapper {
   position: relative;
-  width: 176px;
-  height: 235px;
   margin-bottom: 9px;
   border-radius: 9px;
 }

@@ -1,11 +1,27 @@
 import star from "../assets/star.svg";
 
-export function Card({ img, rating, reviewCount, location, title, price }) {
+export function Card({
+  img,
+  rating,
+  reviewCount,
+  location,
+  title,
+  price,
+  openSpots,
+}) {
+  let badgeText = "";
+
+  if (!openSpots) {
+    badgeText = "Sold out";
+  } else if (location === "Online") {
+    badgeText = "Online";
+  }
+
   return (
     <div className="card">
       <div className="card__img-wrapper">
         <img src={img} alt="" className="card__img" />
-        <p className="card__badge">Sold out</p>
+        {badgeText && <p className="card__badge">{badgeText}</p>}
       </div>
       <div className="card__stats">
         <img src={star} alt="Star" />
